@@ -1,3 +1,5 @@
+Bioinf student pubs vs. all of Rackham
+================
 Kelly Sovacool
 2021-06-09
 
@@ -7,8 +9,6 @@ knitr::opts_chunk$set(
   dpi = 300
 )
 ```
-
-# Bioinf student pubs vs. all of Rackham
 
 ## the original figure
 
