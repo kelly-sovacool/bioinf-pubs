@@ -49,7 +49,7 @@ micolors <- c('#FFCB05', '#00274C')
 add_layers <- function() {
   list(
     scale_fill_manual(values = micolors),
-    labs(y = "% of students", x = "", title = "Number of Publications"),
+    labs(y = "", x = "", title = "Number of Publications"),
     theme_classic(),
     theme(legend.position = c(0.8, 0.9))
   )
@@ -62,7 +62,8 @@ dat %>%
   ggplot(aes(npubs, percent, fill = Program)) +
   geom_bar(stat = 'identity', position = 'dodge') +
   add_layers() +
-  scale_x_continuous(breaks = 0:10, labels = c(0:9, "10+"))
+  scale_x_continuous(breaks = 0:10, labels = c(0:9, "10+")) +
+  ylab('% of students')
 ```
 
 ```{r boxplot}
@@ -72,6 +73,17 @@ dat %>%
   geom_boxplot() +
   add_layers() +
   scale_color_manual(values = c('#00274C', '#989C97')) +
+  scale_y_continuous(breaks = 0:10, labels = c(0:9, "10+")) +
   theme(legend.position = 'none')
 ```
 
+```{r violin}
+dat %>% 
+  ggplot(aes(Program, npubs, weight = percent, 
+             fill = Program, color = Program)) +
+  geom_violin() +
+  add_layers() +
+  scale_color_manual(values = c('#00274C', '#989C97')) +
+  scale_y_continuous(breaks = 0:10, labels = c(0:9, "10+")) +
+  theme(legend.position = 'none')
+```
