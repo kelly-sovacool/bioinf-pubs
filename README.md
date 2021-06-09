@@ -1,6 +1,5 @@
 Bioinf student pubs vs. all of Rackham
 ================
-Kelly Sovacool
 2021-06-09
 
 ## the original figure

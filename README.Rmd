@@ -1,6 +1,5 @@
 ---
-title: 'Bioinf student pubs vs. all of Rackham'
-author: 'Kelly Sovacool'
+title: "Bioinf student pubs vs. all of Rackham"
 date: '`r Sys.Date()`'
 output: 
   github_document:
