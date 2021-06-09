@@ -6,16 +6,17 @@ output:
   github_document:
     html_preview: false
 ---
-```{r setup}
+```{r setup, echo=FALSE}
 knitr::opts_chunk$set(
   fig.path = 'figures/',
-  dpi = 300
+  dpi = 300,
+  out.width = '80%'
 )
 ```
 
 ## the original figure
 
-```{r orig-fig}
+```{r orig-fig, echo = FALSE}
 knitr::include_graphics('figures/doctoral-exit-survey.png')
 ```
 
@@ -45,13 +46,13 @@ head(dat)
 ## make new plots
 
 ```{r colors}
-micolors <- c('#00274C', '#FFCB05')
+micolors <- c('#FFCB05', '#00274C')
 add_layers <- function() {
   list(
     scale_fill_manual(values = micolors),
     labs(y = "% of students", x = "", title = "Number of Publications"),
     theme_classic(),
-    theme(legend.position = c(0.9, 0.9))
+    theme(legend.position = c(0.8, 0.9))
   )
 }
 ```
@@ -71,7 +72,7 @@ dat %>%
              fill = Program, color = Program)) +
   geom_boxplot() +
   add_layers() +
-  scale_color_manual(values = c('#989C97', '#00274C')) +
+  scale_color_manual(values = c('#00274C', '#989C97')) +
   theme(legend.position = 'none')
 ```
 

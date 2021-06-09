@@ -3,20 +3,9 @@ Bioinf student pubs vs. all of Rackham
 Kelly Sovacool
 2021-06-09
 
-``` r
-knitr::opts_chunk$set(
-  fig.path = 'figures/',
-  dpi = 300
-)
-```
-
 ## the original figure
 
-``` r
-knitr::include_graphics('figures/doctoral-exit-survey.png')
-```
-
-![](figures/doctoral-exit-survey.png)<!-- -->
+<img src="figures/doctoral-exit-survey.png" width="80%" />
 
 ## prep the data
 
@@ -54,13 +43,13 @@ head(dat)
 ## make new plots
 
 ``` r
-micolors <- c('#00274C', '#FFCB05')
+micolors <- c('#FFCB05', '#00274C')
 add_layers <- function() {
   list(
     scale_fill_manual(values = micolors),
     labs(y = "% of students", x = "", title = "Number of Publications"),
     theme_classic(),
-    theme(legend.position = c(0.9, 0.9))
+    theme(legend.position = c(0.8, 0.9))
   )
 }
 ```
@@ -73,7 +62,7 @@ dat %>%
   scale_x_continuous(breaks = 0:10, labels = c(0:9, "10+"))
 ```
 
-![](figures/histogram-1.png)<!-- -->
+<img src="figures/histogram-1.png" width="80%" />
 
 ``` r
 dat %>% 
@@ -81,10 +70,10 @@ dat %>%
              fill = Program, color = Program)) +
   geom_boxplot() +
   add_layers() +
-  scale_color_manual(values = c('#989C97', '#00274C')) +
+  scale_color_manual(values = c('#00274C', '#989C97')) +
   theme(legend.position = 'none')
 ```
 
     ## Warning in rq.fit.br(wx, wy, tau = tau, ...): Solution may be nonunique
 
-![](figures/boxplot-1.png)<!-- -->
+<img src="figures/boxplot-1.png" width="80%" />
